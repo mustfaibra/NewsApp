@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="isLoadingCompleted"
+            type="boolean" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.HomeActivity"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:id="@+id/home_toolbar"
+            android:background="@color/black"
+            app:title="@string/app_name"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/news_recycelr"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:listitem="@layout/news_recycler_item"
+            android:visibility="@{isLoadingCompleted?View.VISIBLE:View.GONE}"
+            android:layoutAnimation="@anim/recycler_layout_animation"
+            android:layout_below="@+id/home_toolbar"/>
+
+        <ProgressBar
+            android:id="@+id/loading_bar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/black"
+            android:visibility="@{isLoadingCompleted?View.GONE:View.VISIBLE}" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="com.curiousdev.newsapp.model.Article"/>
+        <variable
+            name="article"
+            type="Article" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.DetailsActivity"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/article_img"
+            android:transitionName="articleImg"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/sm_margin">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/article_date"
+                android:text='@{article.publishedAt , default= "22-10-1998"}'
+                style="@style/TextAppearance.AppCompat.Caption"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/article_title"
+                android:text='@{article.title , default= "Default title"}'
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/article_author"
+                android:text='@{article.author , default= "Default author"}'/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/article_description"
+                android:text='@{article.description , default= "Default description"}'
+                android:layout_marginTop="@dimen/lg_margin"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

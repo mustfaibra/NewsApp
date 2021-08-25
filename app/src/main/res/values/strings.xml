@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">واكب</string>
+    <string name="make_sure_internet_on">تأكد من إتصالك بالإنترنت !</string>
+    <string name="no_local_articles">لا توجد مقالات محفوظة مسبقا !</string>
+    <string name="some_err_occur">حدث خطأ ما ، يرجى إعادة المحاولة مرة أخرى !</string>
+    <string name="keep_updated">تابع العالم لحظة بلحظة</string>
+</resources>
